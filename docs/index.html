@@ -14,6 +14,8 @@
   <script type="text/javascript">
 
   var launch = function () {
+    console.log('called launch!');
+    console.log(arguments)
     var e = document.getElementById('jump');
     var ev = document.createEvent('MouseEvents');
     ev.initEvent('click',true,true,document.defaultView,1,0,0,0,0,false,false,false,false,0,null);
@@ -22,10 +24,8 @@
   }
   if (window.navigator.standalone) {
     if (document.hidden !== undefined) {
-      console.log('visibilitychanged!');
       document.addEventListener('visibilitychange', launch, false);
     } else if (document.webkitHidden !== undefined) {
-      console.log('webkitvisibilitychanged!');
       document.addEventListener('webkitvisibilitychange', launch, false);
     }
   } else {
