@@ -28,6 +28,7 @@
     } else if (document.webkitHidden !== undefined) {
       document.addEventListener('webkitvisibilitychange', launch, false);
     }
+    window.addEventListener('load', launch);
   } else {
     document.getElementById('description').style.display = '';
   }
