@@ -1,0 +1,35 @@
+<html><head>
+  <title>Title</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon-precomposed" href="http://placehold.it/180x180/?text=Dummy">
+  <link rel="apple-touch-startup-image" media="(orientation: landscape)" href="http://placehold.it/1125x2436/?text=Dummy">
+  <link rel="apple-touch-startup-image" media="(orientation: portrait)" href="http://placehold.it/2436x1125/?text=Dummy">
+</head>
+<body style="margin: 0px;">
+  <a id="jump" href="shortcuts://"></a>
+  <p id="description" style="display:none">Add Home Screen</p>
+  <script type="text/javascript">
+
+  var launch = function () {
+    var e = document.getElementById('jump');
+    var ev = document.createEvent('MouseEvents');
+    ev.initEvent('click',true,true,document.defaultView,1,0,0,0,0,false,false,false,false,0,null);
+    document.body.style.backgroundColor = '#FFFFFF';
+    e.dispatchEvent(ev);
+  }
+  if (window.navigator.standalone) {
+    if (document.hidden !== undefined) {
+      console.log('visibilitychanged!');
+      document.addEventListener('visibilitychange', launch, false);
+    } else if (document.webkitHidden !== undefined) {
+      console.log('webkitvisibilitychanged!');
+      document.addEventListener('webkitvisibilitychange', launch, false);
+    }
+  } else {
+    document.getElementById('description').style.display = '';
+  }
+  </script>
+</body></html>
