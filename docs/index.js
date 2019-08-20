@@ -17,9 +17,9 @@ var showSplash = function () {
 
 if (window.navigator.standalone) {
   if (document.hidden !== undefined) {
-    document.addEventListener('visibilitychange', launch, false);
+    document.addEventListener('visibilitychange', showSplash, false);
   } else if (document.webkitHidden !== undefined) {
-    document.addEventListener('webkitvisibilitychange', launch, false);
+    document.addEventListener('webkitvisibilitychange', showSplash, false);
   }
   splash.addEventListener('transitionend', () => {
     var elem = document.getElementById('splash');
