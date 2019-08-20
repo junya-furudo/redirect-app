@@ -3,8 +3,7 @@ var launch = function () {
   var ev = document.createEvent('MouseEvents');
   ev.initEvent('click',true,true,document.defaultView,1,0,0,0,0,false,false,false,false,0,null);
   document.body.style.backgroundColor = '#FFFFFF';
-  // e.dispatchEvent(ev);
-  alert("redirect to app");
+  e.dispatchEvent(ev);
 }
 var showSplash = function () {
   var elem = document.getElementById('splash');
@@ -13,10 +12,10 @@ var showSplash = function () {
   }
   setTimeout(() => {
     elem.classList.add('splash-visible');
-  }, 10);
+  }, 100);
 }
 
-if (window.navigator.standalone || true) {
+if (window.navigator.standalone) {
   if (document.hidden !== undefined) {
     document.addEventListener('visibilitychange', launch, false);
   } else if (document.webkitHidden !== undefined) {
@@ -30,5 +29,5 @@ if (window.navigator.standalone || true) {
   }, false);
   showSplash();
 } else {
-  // document.getElementById('description').style.display = '';
+  document.getElementById('description').style.display = '';
 }
