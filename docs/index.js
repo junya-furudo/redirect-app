@@ -5,7 +5,12 @@ var launch = function () {
   document.body.style.backgroundColor = '#FFFFFF';
   e.dispatchEvent(ev);
 }
-if (window.navigator.standalone) {
+var showSplash = function () {
+  var elem = document.getElementById('splash');
+  elem.classList.add('splash-visible');
+}
+
+if (window.navigator.standalone || true) {
   if (document.hidden !== undefined) {
     document.addEventListener('visibilitychange', launch, false);
   } else if (document.webkitHidden !== undefined) {
@@ -16,10 +21,5 @@ if (window.navigator.standalone) {
   }, false);
   showSplash();
 } else {
-  document.getElementById('description').style.display = '';
-}
-
-var showSplash = function () {
-  var elem = document.getElementById('splash');
-  elem.addClass('splash-visible');
+  // document.getElementById('description').style.display = '';
 }
