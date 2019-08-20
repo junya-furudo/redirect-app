@@ -6,7 +6,7 @@
   transition          : opacity 500ms linear;
   -webkit-transition  : opacity 500ms linear;
   height              : 110%;
-  background-image    : url("http://placehold.it/1125x2436/?text=Dummy");
+  background-image    : url("https://placehold.it/1125x2436/?text=Dummy");
   background-repeat   : no-repeat;
   background-size     : cover;
 }

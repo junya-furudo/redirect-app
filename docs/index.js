@@ -19,7 +19,9 @@ if (window.navigator.standalone || true) {
   splash.addEventListener('transitionend', () => {
     setTimeout(launch, 500);
   }, false);
-  showSplash();
+  setTimeout(() => {
+    showSplash();
+  }, 10);
 } else {
   // document.getElementById('description').style.display = '';
 }
