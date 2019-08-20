@@ -3,8 +3,8 @@
   height              : 100%;
   opacity             : 0;
   background-position : 50% 50%;
-  transition          : opacity 500ms linear;
-  -webkit-transition  : opacity 500ms linear;
+  transition          : opacity 1ms linear;
+  -webkit-transition  : opacity 1ms linear;
   height              : 110%;
   background-image    : url("https://placehold.it/1125x2436/?text=Dummy");
   background-repeat   : no-repeat;
@@ -13,4 +13,5 @@
 
 .splash-visible {
   opacity : 1;
+  transition: opacity 500ms linear;
 }
