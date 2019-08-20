@@ -1,7 +1,4 @@
 var launch = function () {
-  console.log('called launch!');
-  console.dir(arguments)
-  alert('app test');
   var e = document.getElementById('jump');
   var ev = document.createEvent('MouseEvents');
   ev.initEvent('click',true,true,document.defaultView,1,0,0,0,0,false,false,false,false,0,null);
@@ -14,7 +11,15 @@ if (window.navigator.standalone) {
   } else if (document.webkitHidden !== undefined) {
     document.addEventListener('webkitvisibilitychange', launch, false);
   }
-  launch();
+  splash.addEventListener('transitionend', () => {
+    setTimeout(launch, 500);
+  }, false);
+  showSplash();
 } else {
   document.getElementById('description').style.display = '';
+}
+
+var showSplash = function () {
+  var elem = document.getElementById('splash');
+  elem.addClass('splash-visible');
 }
